@@ -9,13 +9,16 @@ public class Main {
 
         int opcio;
         do {
+            /*
+            REFACT 1: METODE
             System.out.println("1. ");
             System.out.println("2. ");
             System.out.println("3. ");
             System.out.println("4. ");
             System.out.println("5. ");
             System.out.println("0. Acabar");
-
+             */
+            Menu();
             opcio = scan.nextInt();
             scan.nextLine();
             switch (opcio) {
@@ -24,15 +27,14 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
+                    if (max(num1, num2)) {
                         System.out.println("aaa");
-                    }
-                    else System.out.println("bbb");
+                    } else System.out.println("bbb");
                     break;
                 case 2:
-                    double a=2;
-                    double b=3;
-                    double c=1;
+                    double a = 2;
+                    double b = 3;
+                    double c = 1;
                     calcEquacioSegongrau(a, b, c);
                     break;
                 case 3:
@@ -46,8 +48,19 @@ public class Main {
             }
         } while (opcio != 0);
     }
+
+    //REFACT 1
+    public static void Menu() {
+        System.out.println("1. ");
+        System.out.println("2. ");
+        System.out.println("3. ");
+        System.out.println("4. ");
+        System.out.println("5. ");
+        System.out.println("0. Acabar");
+    }
+
     public static boolean max(int a, int b) {
-        if(a > b) {
+        if (a > b) {
             return true;
         } else if (a == b) {
             return false;
@@ -55,6 +68,7 @@ public class Main {
             return false;
         }
     }
+
     public static void calcEquacioSegongrau(double a, double b, double c) {
         double D = b * b - 4 * a * c;
         if (D > 0) {
@@ -62,16 +76,15 @@ public class Main {
             x1 = (-b - Math.sqrt(D)) / (2 * a);
             x2 = (-b + Math.sqrt(D)) / (2 * a);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
-        }
-        else if (D == 0) {
+        } else if (D == 0) {
             double x;
             x = -b / (2 * a);
             System.out.println("x = " + x);
-        }
-        else {
+        } else {
             System.out.println("Equation has no roots");
         }
     }
+
     public static class Human {
         private String name;
         private String age;
@@ -80,6 +93,7 @@ public class Main {
         private String street;
         private String house;
         private String quarter;
+
         public String obtenirAdrecaCompleta() {
             StringBuilder result = new StringBuilder();
             return result
@@ -94,7 +108,8 @@ public class Main {
                     .append(quarter).toString();
         }
     }
-
+// REFACTextraccio de classe
+    /*
     public static class Order {
         private List<OrderLineItem> lineItems;
         private double taxRate;
@@ -114,7 +129,9 @@ public class Main {
         }
     }
 
-     public class OrderLineItem {
+     */
+
+    public class OrderLineItem {
         private String productName;
         private int quantity;
         private double price;
@@ -124,6 +141,7 @@ public class Main {
             this.quantity = quantity;
             this.price = price;
         }
+
         public double getPrice() {
             return price * quantity;
         }
