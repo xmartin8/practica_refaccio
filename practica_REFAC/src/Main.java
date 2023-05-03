@@ -1,39 +1,43 @@
-import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        initMenu(); // REFACT: 1 extr metode
+    }
+
+    public static void printMenu() { // REFACT: 2
+        System.out.println("1. ");
+        System.out.println("2. ");
+        System.out.println("3. ");
+        System.out.println("4. ");
+        System.out.println("5. ");
+        System.out.println("0. Acabar");
+    }
+
+    public static void initMenu() { // REFACT: 1
         Scanner scan = new Scanner(System.in);
         String p = "Proves";
 
         int opcio;
         do {
-            System.out.println("1. ");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
-            System.out.println("5. ");
-            System.out.println("0. Acabar");
+            printMenu(); // REFACT: 2 extr metode
 
             opcio = scan.nextInt();
             scan.nextLine();
             switch (opcio) {
                 case 1:
-                    System.out.println("intro: ");
-                    int num1 = scan.nextInt();
-                    System.out.println("intro: ");
-                    int num2 = scan.nextInt();
-                    if (max(num1,num2)) {
-                        System.out.println("aaa");
-                    }
-                    else System.out.println("bbb");
+                    initOp1_Num1BiggerThanNum2(scan); // REFACT: 7 extr metode
                     break;
                 case 2:
+                    /*
                     double a=2;
                     double b=3;
                     double c=1;
                     calcEquacioSegongrau(a, b, c);
+                     */
+                    // REFACT: 9 nom llegible (unifiquem nomenclatura opcions)
+                    initOp2_calcEquacioSegongrau(2, 3, 1); // REFACT: 8 inline code
                     break;
                 case 3:
                     List<OrderLineItem> lineItems = null;
@@ -46,7 +50,30 @@ public class Main {
             }
         } while (opcio != 0);
     }
+
+    public static void initOp1_Num1BiggerThanNum2(Scanner scan) {
+        int num1, num2; // REFACT: 3 declaracio variables
+        String resposta;
+        System.out.println("intro: ");
+        //int num1 = scan.nextInt();
+        num1 = scan.nextInt(); // REFACT: 3
+        System.out.println("intro: ");
+        //int num2 = scan.nextInt();
+        num2 = scan.nextInt(); // REFACT: 3
+        /*
+        if (max(num1,num2)) {
+            System.out.println("aaa"); // REFACT: 5
+        }
+        else System.out.println("bbb"); // REFACT: 6
+        */
+        // REFACT: 4 subst algoritme
+        resposta = num1 + " NO és més gran que " + num2; // REFACT: 6 resposta inteligible
+        if (max(num1,num2)) resposta = num1 + " és més gran que " + num2; // REFACT: 5 resposta inteligible
+        System.out.println(resposta);
+    }
+
     public static boolean max(int a, int b) {
+        /*
         if(a > b) {
             return true;
         } else if (a == b) {
@@ -54,23 +81,34 @@ public class Main {
         } else {
             return false;
         }
+         */
+        return a > b; // REFACT: 10 inline code i subst algoritme
     }
-    public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c;
-        if (D > 0) {
+
+    public static void initOp2_calcEquacioSegongrau(double a, double b, double c) {
+        double dinsArrel = b * b - 4 * a * c; // REFACT: 11 nom llegible
+        String resposta; // REFACT: 12 extrac variable
+
+        if (dinsArrel > 0) {
             double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
-            System.out.println("x1 = " + x1 + ", x2 = " + x2);
+            double arrelDiv = Math.sqrt(dinsArrel) / (2 * a); // REFACT: 13 extrac variable
+
+            // x1 = (-b - Math.sqrt(dinsArrel)) / (2 * a);
+            // x2 = (-b + Math.sqrt(dinsArrel)) / (2 * a);
+            x1 = (-b - arrelDiv); // REFACT: 13
+            x2 = (-b + arrelDiv); // REFACT: 13
+
+            resposta= "x1 = " + x1 + ", x2 = " + x2; // REFACT: 12
         }
-        else if (D == 0) {
+        else if (dinsArrel == 0) {
             double x;
             x = -b / (2 * a);
-            System.out.println("x = " + x);
+            resposta = "x = " + x;
         }
         else {
-            System.out.println("Equation has no roots");
+            resposta = "Equation has no roots"; // REFACT: 12
         }
+        System.out.println(resposta); // REFACT: 12
     }
     public static class Human {
         private String name;
