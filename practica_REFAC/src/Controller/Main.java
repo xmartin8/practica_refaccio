@@ -1,3 +1,8 @@
+package Controller;
+
+import Model.Order;
+import Model.OrderLineItem;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -110,7 +115,9 @@ public class Main {
         }
         System.out.println(resposta); // REFACT: 12
     }
-    public static class Human {
+
+    /*
+    public static class Model.Human {
         private String name;
         private String age;
         private String country;
@@ -132,32 +139,38 @@ public class Main {
                     .append(quarter).toString();
         }
     }
+     */
+    // REFACT: 14 extrac classe
 
-    public static class Order {
-        private List<OrderLineItem> lineItems;
+    /*
+    public static class Model.Order {
+        private List<Model.OrderLineItem> lineItems;
         private double taxRate;
 
-        public Order(List<OrderLineItem> lineItems, double taxRate) {
+        public Model.Order(List<Model.OrderLineItem> lineItems, double taxRate) {
             this.lineItems = lineItems;
             this.taxRate = taxRate;
         }
 
         public double calculateTotalPrice() {
             double subtotal = 0.0;
-            for (OrderLineItem item : lineItems) {
+            for (Model.OrderLineItem item : lineItems) {
                 subtotal += item.getPrice();
             }
             double tax = subtotal * taxRate;
             return subtotal + tax;
         }
     }
+     */
+    // REFACT: 15 extrac classe
 
-     public class OrderLineItem {
+    /*
+     public class Model.OrderLineItem {
         private String productName;
         private int quantity;
         private double price;
 
-        public OrderLineItem(String productName, int quantity, double price) {
+        public Model.OrderLineItem(String productName, int quantity, double price) {
             this.productName = productName;
             this.quantity = quantity;
             this.price = price;
@@ -166,12 +179,15 @@ public class Main {
             return price * quantity;
         }
     }
+     */
+    // REFACT: 16 extrac classe
 
-    public class Customer {
+    /*
+    public class Model.Customer {
         private String firstName;
         private String lastName;
 
-        public Customer(String firstName, String lastName) {
+        public Model.Customer(String firstName, String lastName) {
             this.firstName = firstName;
             this.lastName = lastName;
         }
@@ -180,4 +196,6 @@ public class Main {
             return firstName + " " + lastName;
         }
     }
+     */
+    // REFACT: 17 extrac classe
 }
