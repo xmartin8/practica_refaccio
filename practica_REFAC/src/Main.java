@@ -46,14 +46,19 @@ public class Main {
             }
         } while (opcio != 0);
     }
+    //REFACT  Tipo
     public static boolean max(int a, int b) {
         if(a > b) {
             return true;
-        } else if (a == b) {
+        } else {
+            return false;
+        }
+        /*else if (a == b) {
             return false;
         } else {
             return false;
         }
+        */
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
         double D = b * b - 4 * a * c;
@@ -94,7 +99,7 @@ public class Main {
                     .append(quarter).toString();
         }
     }
-
+//Refact  Extract  de la classe order
     public static class Order {
         private List<OrderLineItem> lineItems;
         private double taxRate;
@@ -140,6 +145,7 @@ public class Main {
 
         public String getFullName() {
             return firstName + " " + lastName;
+
         }
     }
 }
