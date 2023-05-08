@@ -62,9 +62,12 @@ public class Main {
     public static boolean max(int a, int b) {
         if (a > b) {
             return true;
-        } else if (a == b) {
+        }
+        else if (a == b) {
+
             return false;
-        } else {
+        }
+        else {
             return false;
         }
     }
