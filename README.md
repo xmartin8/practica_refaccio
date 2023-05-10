@@ -1,4 +1,4 @@
-#Refactorització del codi Java
+# Refactorització del codi Java
 
 Aquest README detalla la refactorització del codi Java original proporcionat.
 
