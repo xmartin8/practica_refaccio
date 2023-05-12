@@ -153,6 +153,7 @@ public class Main {
 
         public String getFullName() {
             return firstName + " " + lastName;
+
         }
     }
     //Refact 1
