@@ -88,15 +88,18 @@ public class Main {
             x2 = (-b + Math.sqrt(D)) / (2 * a);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         } else if (D == 0) {
-            double x;
-            x = -b / (2 * a);
+            double x = -b / (2 * a);
+           //refactor 6: Metode variable temporal
+            //  x = -b / (2 * a);
             System.out.println("x = " + x);
         } else {
             System.out.println("Equation has no roots");
         }
     }
 
-    public static class Human {
+   // REFACT 8: METODE EXTRACCIO DE CLASSE
+  /* public static class Human {
+
         private String name;
         private String age;
         private String country;
@@ -108,8 +111,7 @@ public class Main {
         public String obtenirAdrecaCompleta() {
             StringBuilder result = new StringBuilder();
             // REFACT 4: Extraccio de metode
-            return result.append(country + ", " + city + ", " + street + ", " + house + " " + quarter).toString();
-                 /*   .append(country)
+            return.append(country)
                     .append(", ")
                     .append(city)
                     .append(", ")
@@ -119,9 +121,12 @@ public class Main {
                     .append(" ")
                     .append(quarter).toString();
 
-                  */
-        }
+
+       }
     }
+
+   */
+
 // REFACT 3: Extraccio de classe
     /*
     public static class Order {
@@ -160,7 +165,8 @@ public class Main {
             return price * quantity;
         }
     }
-
+    //REFACT 7: Extraccio de metode
+/*
     public class Customer {
         private String firstName;
         private String lastName;
@@ -174,4 +180,6 @@ public class Main {
             return firstName + " " + lastName;
         }
     }
+
+ */
 }
