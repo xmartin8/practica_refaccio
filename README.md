@@ -7,7 +7,7 @@ Extracció de mètodes: s'han extret diversos blocs de codi del mètode main() e
 
 Extracció de classes: extreu diverses classes del codi original per millorar l'organització del codi i la separació de tasques. Aquestes classes són Menu, Utils, Address, Person, Customer, Order i OrderLineItem.
 
-Mètodes i variables reanomenades: es van canviar el nom de diversos mètodes i variables per millorar la claredat del codi. Per exemple, el mètode getFullAddress() s'ha canviat a getFullAddress().
+Mètodes i variables reanomenades: es van canviar el nom de diversos mètodes i variables per millorar la claredat del codi.
 
 Desduplicació de codi: elimina la duplicació de codi eliminant mètodes i creant classes reutilitzables.
 
