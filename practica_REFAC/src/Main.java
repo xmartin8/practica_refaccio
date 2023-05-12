@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,7 +8,7 @@ public class Main {
 
         int opcio;
         do {
-            // REFACT Tipo Extraccio de metode 1
+            // REFACT 1 Tipo Extraccio de metode
             menu();
             /*
             System.out.println("1. ");
@@ -28,9 +27,16 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
+                    //Refactor 2 tipo extraccio de variable
+                   final boolean MAX = max(num1, num2);
+                    if (MAX) {
+                        System.out.println("aaa");
+                    }
+                    /*
                     if (max(num1,num2)) {
                         System.out.println("aaa");
                     }
+                     */
                     else System.out.println("bbb");
                     break;
                 case 2:
@@ -40,7 +46,7 @@ public class Main {
                     calcEquacioSegongrau(a, b, c);
                     break;
                 case 3:
-                    List<OrderLineItem> lineItems = null;
+                    List<OrderLineItems.OrderLineItem> lineItems = null;
                     Order asd = new Order(lineItems, 5.5);
                     break;
                 case 0:
@@ -50,14 +56,16 @@ public class Main {
             }
         } while (opcio != 0);
     }
-    //REFACT  Tipo inline code no se si aixo seria exactament inline code pero es el que mes s'hi acosta, ja que estic simplifcant code
+    //REFACT 3 Tipo inline code no se si aixo seria exactament inline code pero es el que mes s'hi acosta, ja que estic simplifcant code
     public static boolean max(int a, int b) {
+        return a > b;
+        /*
         if(a > b) {
             return true;
         } else {
             return false;
         }
-        /*else if (a == b) {
+        else if (a == b) {
             return false;
         } else {
             return false;
@@ -65,7 +73,8 @@ public class Main {
         */
     }
     public static void calcEquacioSegongrau(double a, double b, double c) {
-        double D = b * b - 4 * a * c;
+        //REFACT 4 Tipo variable temporal, ja que només emmagatzema un valor temporalment
+        final double D = b * b - 4 * a * c;
         if (D > 0) {
             double x1, x2;
             x1 = (-b - Math.sqrt(D)) / (2 * a);
@@ -73,14 +82,16 @@ public class Main {
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
         else if (D == 0) {
-            double x;
-            x = -b / (2 * a);
-            System.out.println("x = " + x);
+            //Refact 5 Tipo variable temporal ja que esta fent una operacio i es guarda temporalment el resultat
+           final double X = -b / (2 * a);
+            System.out.println("x = " + X);
         }
         else {
             System.out.println("Equation has no roots");
         }
     }
+    //Refact 6 tipo Extract de metode de la classe order ja que es pot crear una classe independent per aquesta funcio
+    /*
     public static class Human {
         private String name;
         private String age;
@@ -91,10 +102,7 @@ public class Main {
         private String quarter;
         public String obtenirAdrecaCompleta() {
             StringBuilder result = new StringBuilder();
-            return result
-                    //Refact tipo inline code, ja que estic simplificant el codi i no fa falta fer tans append
-                    .append(country + ", " + city + ", " + street + ", " + house + " " + quarter).toString();
-                  /*
+            return result.append(country + ", " + city + ", " + street + ", " + house + " " + quarter).toString();
                   .append(country)
                   .append(", ")
                     .append(city)
@@ -104,11 +112,12 @@ public class Main {
                     .append(house)
                     .append(" ")
                     .append(quarter).toString();
-                    */
         }
     }
-//Refact tipo Extract de metode de la classe order ja que es pot crear una calsse independent per aquesta funcio
-    public static class Order {
+
+     */
+//Refact 7 tipo Extract de metode de la classe order ja que es pot crear una calsse independent per aquesta funcio
+   /* public static class Order {
         private List<OrderLineItem> lineItems;
         private double taxRate;
 
@@ -127,7 +136,11 @@ public class Main {
         }
     }
 
-     public class OrderLineItem {
+    */
+    //Refactor 8 tipo Extract de metode de la classe order ja que es pot crear una classe independent per aquesta funcio
+
+    /*
+    public class OrderLineItem {
         private String productName;
         private int quantity;
         private double price;
@@ -141,7 +154,9 @@ public class Main {
             return price * quantity;
         }
     }
-
+     */
+//Refact 9 tipo Extract de metode de la classe order ja que es pot crear una classe independent per aquesta funcio
+    /*
     public class Customer {
         private String firstName;
         private String lastName;
@@ -156,6 +171,8 @@ public class Main {
 
         }
     }
+
+     */
     //Refact 1
     public static void menu(){
         System.out.println("1. ");
