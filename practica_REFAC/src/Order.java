@@ -14,7 +14,11 @@ public class Order {
         for (Main.OrderLineItem item : lineItems) {
             subtotal += item.getPrice();
         }
+        // REFACTOR 5: Metode Inline Temp
+        return subtotal + (subtotal * taxRate);
+        /*
         double tax = subtotal * taxRate;
         return subtotal + tax;
+         */
     }
 }

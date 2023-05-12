@@ -8,6 +8,7 @@ public class Main {
         String p = "Proves";
 
         int opcio;
+
         do {
             /*
             REFACT 1: METODE
@@ -63,10 +64,17 @@ public class Main {
         if (a > b) {
             return true;
         }
+        /*
         else if (a == b) {
 
             return false;
         }
+        else {
+            return false;
+        }
+
+         */
+        //REFACT 2: Metode
         else {
             return false;
         }
@@ -99,8 +107,9 @@ public class Main {
 
         public String obtenirAdrecaCompleta() {
             StringBuilder result = new StringBuilder();
-            return result
-                    .append(country)
+            // REFACT 4: Extraccio de metode
+            return result.append(country + ", " + city + ", " + street + ", " + house + " " + quarter).toString();
+                 /*   .append(country)
                     .append(", ")
                     .append(city)
                     .append(", ")
@@ -109,9 +118,11 @@ public class Main {
                     .append(house)
                     .append(" ")
                     .append(quarter).toString();
+
+                  */
         }
     }
-// REFACTextraccio de classe
+// REFACT 3: Extraccio de classe
     /*
     public static class Order {
         private List<OrderLineItem> lineItems;
