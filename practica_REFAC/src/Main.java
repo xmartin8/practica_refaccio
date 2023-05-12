@@ -28,10 +28,18 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
+                    final boolean max_number = max(num1, num2);
+                    if (max_number) {
+                        System.out.println("aaa");
+                    } else System.out.println("bbb");
+                    // REFACT 9 : EXTRACCIO DE VARIABLE
+                    /*
                     if (max(num1, num2)) {
                         System.out.println("aaa");
                     } else System.out.println("bbb");
                     break;
+
+                     */
                 case 2:
                     double a = 2;
                     double b = 3;
@@ -149,7 +157,8 @@ public class Main {
     }
 
      */
-
+/*
+// REFACT 10: Extraccio de metode
     public class OrderLineItem {
         private String productName;
         private int quantity;
@@ -165,6 +174,9 @@ public class Main {
             return price * quantity;
         }
     }
+
+ */
+
     //REFACT 7: Extraccio de metode
 /*
     public class Customer {
