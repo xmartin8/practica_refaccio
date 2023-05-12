@@ -9,12 +9,16 @@ public class Main {
 
         int opcio;
         do {
+            // REFACT Tipo Extraccio de metode 1
+            menu();
+            /*
             System.out.println("1. ");
             System.out.println("2. ");
             System.out.println("3. ");
             System.out.println("4. ");
             System.out.println("5. ");
             System.out.println("0. Acabar");
+             */
 
             opcio = scan.nextInt();
             scan.nextLine();
@@ -46,7 +50,7 @@ public class Main {
             }
         } while (opcio != 0);
     }
-    //REFACT  Tipo
+    //REFACT  Tipo inline code no se si aixo seria exactament inline code pero es el que mes s'hi acosta, ja que estic simplifcant code
     public static boolean max(int a, int b) {
         if(a > b) {
             return true;
@@ -88,8 +92,11 @@ public class Main {
         public String obtenirAdrecaCompleta() {
             StringBuilder result = new StringBuilder();
             return result
-                    .append(country)
-                    .append(", ")
+                    //Refact tipo inline code, ja que estic simplificant el codi i no fa falta fer tans append
+                    .append(country + ", " + city + ", " + street + ", " + house + " " + quarter).toString();
+                  /*
+                  .append(country)
+                  .append(", ")
                     .append(city)
                     .append(", ")
                     .append(street)
@@ -97,9 +104,10 @@ public class Main {
                     .append(house)
                     .append(" ")
                     .append(quarter).toString();
+                    */
         }
     }
-//Refact  Extract  de la classe order
+//Refact tipo Extract de metode de la classe order ja que es pot crear una calsse independent per aquesta funcio
     public static class Order {
         private List<OrderLineItem> lineItems;
         private double taxRate;
@@ -146,5 +154,14 @@ public class Main {
         public String getFullName() {
             return firstName + " " + lastName;
         }
+    }
+    //Refact 1
+    public static void menu(){
+        System.out.println("1. ");
+        System.out.println("2. ");
+        System.out.println("3. ");
+        System.out.println("4. ");
+        System.out.println("5. ");
+        System.out.println("0. Acabar");
     }
 }
