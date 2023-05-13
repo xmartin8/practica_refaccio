@@ -1,7 +1,19 @@
-# Practica de Refaccio (UF2 de M05)
-- Cal que afegiu tota la refacció que trobeu necessària
-- Important marcar els canvis amb una etqueta com ara REFACT
-- Deixa clar quina refacció estàs fent i si cal justifica-ho
-- Crea una branca del main per a afegir els teus canvis
-- Deixa la teva branca preparada per a que, en cas de fusionar-la amb la master, no afegeixi el teu fitxer .iml
-- No fusionis en cap cas la teva branca amb la master
+# Refactorització del codi Java
+
+Aquest README detalla la refactorització del codi Java original proporcionat.
+
+Canvis realitzats:
+Extracció de mètodes: s'han extret diversos blocs de codi del mètode main() en mètodes separats per millorar la llegibilitat i la reutilització del codi. Aquests inclouen compareNumbers(), solveQuadraticEquation() i calculateTotalOrderPrice().
+
+Extracció de classes: extreu diverses classes del codi original per millorar l'organització del codi i la separació de tasques. Aquestes classes són Menu, Utils, Address, Person, Customer, Order i OrderLineItem.
+
+Mètodes i variables reanomenades: es van canviar el nom de diversos mètodes i variables per millorar la claredat del codi.
+
+Desduplicació de codi: elimina la duplicació de codi eliminant mètodes i creant classes reutilitzables.
+
+Substitució d'algoritmes: substitueix un algorisme que compara dos nombres per un mètode més senzill i eficient.
+
+Organització de les classes en paquets: Les classes s'organitzen en paquets segons la seva funcionalitat per millorar l'organització del codi.
+
+En conclusió
+La refactorització permet millorar significativament la qualitat del codi, augmentant la llegibilitat, la reutilització i el manteniment del codi. El codi ara segueix més estrictament els principis de la programació orientada a objectes i els principis SOLID.
