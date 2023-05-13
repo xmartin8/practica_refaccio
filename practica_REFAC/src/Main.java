@@ -28,11 +28,12 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
+                    // REFACT 9 : EXTRACCIO DE VARIABLE
                     final boolean max_number = max(num1, num2);
+
                     if (max_number) {
                         System.out.println("aaa");
                     } else System.out.println("bbb");
-                    // REFACT 9 : EXTRACCIO DE VARIABLE
                     /*
                     if (max(num1, num2)) {
                         System.out.println("aaa");
@@ -89,13 +90,17 @@ public class Main {
     }
 
     public static void calcEquacioSegongrau(double a, double b, double c) {
+        /*
         double D = b * b - 4 * a * c;
-        if (D > 0) {
-            double x1, x2;
-            x1 = (-b - Math.sqrt(D)) / (2 * a);
-            x2 = (-b + Math.sqrt(D)) / (2 * a);
-            System.out.println("x1 = " + x1 + ", x2 = " + x2);
-        } else if (D == 0) {
+        */
+        // REFACT 11: Canvi en el nom de la variable
+        double arrelCalculada = b * b - 4 * a * c;
+        if (arrelCalculada > 0) {
+            double resultat1, resultat2;
+            resultat1 = (-b - Math.sqrt(arrelCalculada)) / (2 * a);
+            resultat2 = (-b + Math.sqrt(arrelCalculada)) / (2 * a);
+            System.out.println("x1 = " + resultat1 + ", x2 = " + resultat2);
+        } else if (arrelCalculada == 0) {
             double x = -b / (2 * a);
            //refactor 6: Metode variable temporal
             //  x = -b / (2 * a);
@@ -105,7 +110,7 @@ public class Main {
         }
     }
 
-   // REFACT 8: METODE EXTRACCIO DE CLASSE
+   // REFACT 8: Extraccio de metode de classe Human
   /* public static class Human {
 
         private String name;
@@ -135,7 +140,7 @@ public class Main {
 
    */
 
-// REFACT 3: Extraccio de classe
+// REFACT 3: Extraccio de metode de classe Order
     /*
     public static class Order {
         private List<OrderLineItem> lineItems;
@@ -158,7 +163,7 @@ public class Main {
 
      */
 /*
-// REFACT 10: Extraccio de metode
+// REFACT 10: Extraccio de metode de classe OrderLineItem
     public class OrderLineItem {
         private String productName;
         private int quantity;
@@ -177,7 +182,7 @@ public class Main {
 
  */
 
-    //REFACT 7: Extraccio de metode
+    //REFACT 7: Extraccio de metode de classe Customer
 /*
     public class Customer {
         private String firstName;
