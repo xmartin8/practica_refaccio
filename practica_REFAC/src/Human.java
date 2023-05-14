@@ -9,7 +9,7 @@ public class Human {
 
     public String obtenirAdrecaCompleta() {
         StringBuilder result = new StringBuilder();
-        // REFACT 4: Extraccio de metode
+        // REFACT 4: Extraccio de metode Inline Code
         return result.append(country + ", " + city + ", " + street + ", " + house + " " + quarter).toString();
                  /*   .append(country)
                     .append(", ")

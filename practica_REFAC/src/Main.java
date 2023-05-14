@@ -11,7 +11,7 @@ public class Main {
 
         do {
             /*
-            REFACT 1: METODE
+            REFACT 1: METODE DE REDUCCIÓ DE CODI
             System.out.println("1. ");
             System.out.println("2. ");
             System.out.println("3. ");
@@ -28,19 +28,19 @@ public class Main {
                     int num1 = scan.nextInt();
                     System.out.println("intro: ");
                     int num2 = scan.nextInt();
-                    // REFACT 9 : EXTRACCIO DE VARIABLE
-                    final boolean max_number = max(num1, num2);
-
-                    if (max_number) {
-                        System.out.println("aaa");
-                    } else System.out.println("bbb");
-                    /*
+                    // REFACT 9 : EXTRACCIO DE VARIABLE EN IF
+                                        /*
                     if (max(num1, num2)) {
                         System.out.println("aaa");
                     } else System.out.println("bbb");
                     break;
 
                      */
+                    final boolean max_number = max(num1, num2);
+                    if (max_number) {
+                        System.out.println("aaa");
+                    } else System.out.println("bbb");
+
                 case 2:
                     double a = 2;
                     double b = 3;
@@ -83,7 +83,7 @@ public class Main {
         }
 
          */
-        //REFACT 2: Metode
+        //REFACT 2: Metode Inline Code : En el cas de que el valor d'a sigui més que b retornarà true, si no false
         else {
             return false;
         }
@@ -101,8 +101,8 @@ public class Main {
             resultat2 = (-b + Math.sqrt(arrelCalculada)) / (2 * a);
             System.out.println("x1 = " + resultat1 + ", x2 = " + resultat2);
         } else if (arrelCalculada == 0) {
+            //refactor 6: Metode variable temporal
             double x = -b / (2 * a);
-           //refactor 6: Metode variable temporal
             //  x = -b / (2 * a);
             System.out.println("x = " + x);
         } else {
